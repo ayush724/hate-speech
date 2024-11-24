@@ -2,7 +2,8 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+#from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 import re
 import nltk
@@ -65,7 +66,7 @@ def predict_hate_speech(text):
     cv = CountVectorizer()
     x = cv.fit_transform(x)
     X_train, X_test, y_train, y_test = train_test_split(x,y, test_size= 0.33, random_state= 42)
-    rf = RandomForestClassifier()
+    rf = DecisionTreeClassifier()
     rf.fit(X_train,y_train)
     y_pred = rf.predict(X_test)
     st.write("Model Accuracy")
