@@ -12,7 +12,7 @@ from nltk.corpus import stopwords
 stopword = set(stopwords.words("english"))
 import streamlit as st
 from PIL import Image
-image = Image.open('C:/Users/ayush/OneDrive/Desktop/hate_speech_new/hate-image.png')
+image = Image.open('hate-image.png')
 st.image(image, caption='',width=700)
 
 global df
